@@ -1,6 +1,38 @@
 <cx-storefront></cx-storefront>
 
-<ng-template [cxOutletRef]="pdpOutlets.RATING" let-product>
-    <p-rating [(ngModel)]="product.averageRating" [cancel]="false" readOnly="true"></p-rating>
-        PrimeNG Rating component {{product?.averageRating}}
+<ng-template [cxOutletRef]="pdpOutlets.SUMMARY" let-product>
+
+    <div class="row">
+    
+        <div class="images col-6">
+            <div *ngIf="product.images?.GALLERY.length">
+                <ng-container *ngFor="let image of product.images.GALLERY">
+                    <img [src]="image.zoom.url" alt="">
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="container col-6">
+            <div class="name">{{ product?.name }}</div>
+            <div class="code">ID {{ product?.code }}</div>
+            
+            <div class="rating">
+                <p-rating [(ngModel)]="product.averageRating" [cancel]="false" readOnly="true"></p-rating>
+            </div>
+
+            <div class="price" aria-label="new item price">
+                {{ product?.price?.formattedValue }}
+            </div>
+            
+            <div class="description"><p [innerHTML]="product?.summary"></p></div>
+
+            <div class="quantity">
+                <label>Qty</label>
+                <p-spinner [(ngModel)]="val"></p-spinner>
+                <span class="info">{{ stockInfo }}</span>
+            </div>
+
+        </div>
+    </div>
+
 </ng-template>

@@ -10,5 +10,5 @@ export class AppComponent {
 
   pdpOutlets = ProductDetailOutlets;
 
-  
+  val = 3;
 }
