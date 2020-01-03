@@ -1,1 +1,6 @@
 <cx-storefront></cx-storefront>
+
+<ng-template [cxOutletRef]="pdpOutlets.RATING" let-product>
+    <p-rating [(ngModel)]="product.averageRating" [cancel]="false" readOnly="true"></p-rating>
+        PrimeNG Rating component {{product?.averageRating}}
+</ng-template>

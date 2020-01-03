@@ -1,0 +1,50 @@
+# dev env common ignores
+node_modules
+dist
+temp
+.classpath
+.project
+.vscode
+.settings
+.sts4-cache/**
+svn-prop.tmp
+
+#Icons
+
+#Styleguide
+# packages/styleguide/src/app/features/primeng/demo
+# packages/styleguide/src/vendor
+packages/styleguide/src/assets/showcase/images/layouts
+packages/styleguide/.out
+packages/styleguide/assets/documentation_code
+
+#Theme
+packages/primeng-theme/theme.min.css
+
+# build output locations
+coverage
+target
+
+#backstop files
+packages/styleguide/backstop_data/*/html_report
+packages/styleguide/backstop_data/*/test
+packages/styleguide/backstop_data/*/ci_report
+
+
+# IDE crud
+.idea
+*.iml
+
+# E2E Files
+REPORTS/
+debug.log
+local.log
+
+# System Files
+.DS_Store
+
+# Temp.json - is generated on build for footer build time info
+# if this file is not in your local run `npm i` and the postinstall
+# process will generate it again
+# temp.json
+
