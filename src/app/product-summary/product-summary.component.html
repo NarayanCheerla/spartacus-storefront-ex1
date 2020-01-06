@@ -1,0 +1,38 @@
+<div class="row">
+    
+  <div class="images col-6">
+      <p-carousel [value]="product.images?.GALLERY" [numVisible]="1" [numScroll]="1" [circular]="false">
+          <ng-template let-image pTemplate="item">
+              <div class="align-center">
+                  <img [src]="image.zoom.url" alt="">
+              </div>
+          </ng-template>
+      </p-carousel>
+  </div>
+
+  <div class="container col-6">
+      <h1 class="name">{{ product?.name }}</h1>
+      <h5 class="code">ID {{ product?.code }}</h5>
+      
+      <div class="rating">
+          <p-rating [(ngModel)]="product.averageRating" [cancel]="false" readonly="true"></p-rating>
+      </div>
+
+      <div class="price" aria-label="new item price">
+          {{ product?.price?.formattedValue }}
+      </div>
+      
+      <div class="description"><p [innerHTML]="product?.summary"></p></div>
+
+      <div class="quantity">
+          <label>Qty</label>
+          <p-spinner [(ngModel)]="quantity"></p-spinner>
+          <span class="info">{{ stockInfo }}</span>
+      </div>
+
+      <div class="m-4">
+          <button mat-raised-button color="primary" (click)="addToCart(product?.code)">Add To Cart</button>
+      </div>
+
+  </div>
+</div>
